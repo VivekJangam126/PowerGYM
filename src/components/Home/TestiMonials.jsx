@@ -77,7 +77,7 @@ function Test() {
           <div className="flex items-center space-x-3 mb-4">
             <img className="w-10 h-10 rounded-full" src="https://www.bing.com/th/id/OIP.bJpr9jpclIkXQT-hkkb1KQHaHa?w=195&h=211&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" />
             <div>
-              <h4 className="font-semibold text-[#222831]">Nainesh Idiat</h4>
+              <h4 className="font-semibold text-[#222831]">Nainesh Indait</h4>
               <p className="text-sm text-[#393E46]">Verified Member</p>
             </div>
           </div>

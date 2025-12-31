@@ -7,7 +7,7 @@ function Why() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % totalCards);
-    }, 4000);
+    }, 2000);
     return () => clearInterval(interval);
   }, []);
 

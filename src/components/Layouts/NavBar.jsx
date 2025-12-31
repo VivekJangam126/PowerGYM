@@ -29,7 +29,7 @@ function Nav() {
 
         <li>
           <a
-            href="#"
+            href="/about"
             className="bg-[#EEEEEE] text-[#222831] px-3 py-1 rounded
                        hover:bg-[#00ADB5] hover:text-[#222831]
                        transition-colors"

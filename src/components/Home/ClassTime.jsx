@@ -7,7 +7,7 @@ function Class() {
       </h2>
 
       <div className="max-w-7xl mx-auto px-5 overflow-x-auto">
-        <table className="min-w-[900px] w-full border-collapse rounded-xl overflow-hidden shadow-lg bg-white/80">
+        <table className="min-w-225  w-full border-collapse rounded-xl overflow-hidden shadow-lg bg-white/80">
 
           <thead className="bg-[#222831] text-[#EEEEEE]">
             <tr>
