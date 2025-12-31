@@ -1,8 +1,32 @@
 import logo from "../../assets/logo2.png";
-
+import { useState,useEffect } from "react";
 function Modal({ isOpen, onClose ,onSwitchToRegister}) {
   if (!isOpen) return null;
+  const [username,setUserName]=useState("");
+  const [pass,setPassword]=useState("");
+  const [isLoggedIn,setIsLoggedIn]=useState(false);
 
+  useEffect(()=>{
+    if(isLoggedIn){
+      setUserName("");
+      setPassword("");
+     setIsLoggedIn(false);
+      
+    }},[isLoggedIn]);
+
+  const show=()=>{
+  console.log(username);
+  console.log(pass);
+  if(username==="admin" && pass==="123"){
+    setIsLoggedIn(true);
+    alert("Login Successful");
+    onClose();
+  }
+  else{
+    alert("Login Failed");
+  }
+  }
+  
   return (
     // Overlay (click outside closes)
     <div
@@ -30,7 +54,9 @@ function Modal({ isOpen, onClose ,onSwitchToRegister}) {
 
         {/* Form */}
         <div className="space-y-4">
-          <input
+          <input 
+          value={username}
+          onChange={(e)=>setUserName(e.target.value) }
             type="text"
             placeholder="Username or Email"
             className="w-full px-4 py-2 rounded bg-[#393E46]
@@ -38,7 +64,9 @@ function Modal({ isOpen, onClose ,onSwitchToRegister}) {
                        focus:outline-none focus:ring-2 focus:ring-[#00ADB5]"
           />    
 
-          <input
+          <input 
+          value={pass}
+          onChange={(e)=>setPassword(e.target.value) }
             type="password"
             placeholder="Password"
             className="w-full px-4 py-2 rounded bg-[#393E46]
@@ -48,7 +76,11 @@ function Modal({ isOpen, onClose ,onSwitchToRegister}) {
         </div>
 
         {/* Login Button */}
-        <button
+        <button 
+        
+        onClick={()=>{
+          show(); 
+        } }
           className="w-full mt-6 bg-[#00ADB5] text-[#222831]
                      font-semibold py-2 rounded
                      hover:opacity-90 transition"

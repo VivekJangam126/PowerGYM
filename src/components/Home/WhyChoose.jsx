@@ -58,7 +58,7 @@ function Why() {
           {cards.map((card, index) => (
             <div
               key={index}
-              className="w-full flex-shrink-0 flex flex-col md:flex-row items-center
+              className="w-full shrink-0 flex flex-col md:flex-row items-center
                          px-6 md:px-16 space-y-8 md:space-y-0 md:space-x-12"
             >
               <div className="w-full md:w-1/2 space-y-5">
