@@ -5,8 +5,8 @@ import Test from '../components/Home/TestiMonials.jsx';
 import Class from '../components/Home/ClassTime.jsx';
 function HomePage(){
     return(
-        <>
-        <div >
+        
+        <div className="w-full overflow-y-hidden">
         <Intro />
         <Why />
         <Program />
@@ -14,7 +14,7 @@ function HomePage(){
         <Test />
        
         </div>
-        </>
+        
     )
 }
 

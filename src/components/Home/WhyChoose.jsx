@@ -45,7 +45,7 @@ function Why() {
   ];
 
   return (
-    <section className="bg-[#EEEEEE] w-full py-20 select-none">
+    <section className="bg-[#EEEEEE] w-full py-20 select-none overflow-x-hidden ">
       <h2 className="text-3xl font-bold text-center mb-12 text-[#222831]">
         Why Choose Power GYM?
       </h2>

@@ -20,18 +20,6 @@ function Program() {
             title: "Personal Training",
             desc: "One-on-one training sessions focused on your personal fitness goals.",
           },
-          {
-            title: "Functional Training",
-            desc: "Improve mobility, balance, and real-life strength with functional workouts.",
-          },
-          {
-            title: "Cardio & HIIT",
-            desc: "High-intensity workouts designed to boost stamina and burn calories fast.",
-          },
-          {
-            title: "Body Transformation",
-            desc: "Complete physique transformation with guided workouts and nutrition support.",
-          },
         ].map((program, index) => (
           <div
             key={index}
@@ -63,6 +51,11 @@ function Program() {
           </div>
         ))}
 
+      </div>
+      <div className="flex justify-center mt-12">
+        <a  href="/programs" className="bg-[#00ADB5] text-[#222831] px-6 py-3 rounded-lg font-semibold hover:bg-[#222831] hover:text-[#EEEEEE] transition-colors duration-300">
+          Explore All Programs
+        </a>
       </div>
     </section>
   );

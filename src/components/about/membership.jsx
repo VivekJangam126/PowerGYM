@@ -23,7 +23,7 @@ function AnimatedCard({ direction, title, desc, img, reverse }) {
     <div
       ref={ref}
       className={`group flex flex-col lg:flex-row ${reverse ? "lg:flex-row-reverse" : ""}
-      items-center gap-8 bg-white rounded-2xl shadow-md overflow-hidden
+      items-center gap-8 bg-white rounded-2xl shadow-md overflow-x-hidden
       transition-all duration-700 hover:-translate-y-2 hover:shadow-xl
       ${visible ? "opacity-100 translate-x-0" : `opacity-0 ${direction}`}
       `}
@@ -51,7 +51,7 @@ function AnimatedCard({ direction, title, desc, img, reverse }) {
 function Membership() {
   return (
     <section className="bg-[#EEEEEE] w-full py-20 select-none">
-      <div className="max-w-7xl mx-auto px-4 flex flex-col gap-20">
+      <div className="max-w-7xl mx-auto px-4 flex flex-col gap-10">
 
         <AnimatedCard
           direction="-translate-x-24"

@@ -1,85 +1,73 @@
-import logo from '../../assets/logo2.png';
+import { useState } from "react";
+import logo from "../../assets/logo2.png";
 
 function Nav() {
+  const [isOpen, setIsOpen] = useState(false);
 
-  
   return (
-    <nav className="bg-[#393E46] text-[#EEEEEE] w-full px-5  flex items-center justify-between select-none">
-      <div className="flex items-center gap-2">
+    <nav className="bg-[#393E46] text-[#EEEEEE] w-full px-5 select-none  md:flex-row">
+      
+      {/* Top Bar */}
+      <div className="flex items-center justify-between py-4">
+        
+        {/* Logo */}
+        <div className="flex items-center gap-3">
+          <img
+            src={logo}
+            alt="Logo"
+            className="w-12 h-12 rounded-full"
+          />
+          <h1 className="text-2xl md:text-3xl font-bold tracking-wide">
+            Power GYM
+          </h1>
+        </div>
 
-     
-      <p>
-        <img src={logo} alt="Logo" className="w-25 h-25 rounded-full" />
-      </p>
-      <h1 className="text-xl sm:text-3xl md:text-4xl font-bold tracking-wide">
-        Power GYM
-      </h1>
- </div>
-      <ul className="hidden md:flex items-center gap-4">
-        <li>
-          <a
-            href="/"
-            className="bg-[#EEEEEE] text-[#222831] px-3 py-1 rounded
-                       hover:bg-[#00ADB5] hover:text-[#222831]
-                       transition-colors"
-          >
-            Home
-          </a>
-        </li>
+        {/* Desktop Menu */}
+        <ul className="hidden md:flex items-center gap-4">
+          {["Home", "About", "Programs", "Trainer", "Gallery"].map(
+            (item) => (
+              <li key={item}>
+                <a
+                  href={`/${item.toLowerCase()}`}
+                  className="bg-[#EEEEEE] text-[#222831] px-3 py-1 rounded
+                             hover:bg-[#00ADB5] transition-colors"
+                >
+                  {item}
+                </a>
+              </li>
+            )
+          )}
+        </ul>
 
-        <li>
-          <a
-            href="/about"
-            className="bg-[#EEEEEE] text-[#222831] px-3 py-1 rounded
-                       hover:bg-[#00ADB5] hover:text-[#222831]
-                       transition-colors"
-          >
-            About
-          </a>
-        </li>
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="md:hidden bg-[#EEEEEE] text-[#222831] px-3 py-1 rounded
+                     hover:bg-[#00ADB5] transition-colors"
+        >
+          {isOpen ? "Close" : "Menu"}
+        </button>
+      </div>
 
-        <li>
-          <a
-            href="#"
-            className="bg-[#EEEEEE] text-[#222831] px-3 py-1 rounded
-                       hover:bg-[#00ADB5] hover:text-[#222831]
-                       transition-colors"
-          >
-            Programs
-          </a>
-        </li>
-
-        <li>
-          <a
-            href="/"
-            className="bg-[#EEEEEE] text-[#222831] px-3 py-1 rounded
-                       hover:bg-[#00ADB5] hover:text-[#222831]
-                       transition-colors"
-          >
-            Trainer
-          </a>
-        </li>
-
-        <li>
-          <a
-            href="#"
-            className="bg-[#EEEEEE] text-[#222831] px-3 py-1 rounded
-                       hover:bg-[#00ADB5] hover:text-[#222831]
-                       transition-colors"
-          >
-            Gallery
-          </a>
-        </li>
-      </ul>
-
-      <button
-        className="md:hidden bg-[#EEEEEE] text-[#222831] px-3 py-1 rounded
-                   hover:bg-[#00ADB5] hover:text-[#222831]
-                   transition-colors"
-      >
-        Menu
-      </button>
-
+      {/* Mobile Dropdown Menu */}
+      {isOpen && (
+        <ul className="md:hidden flex flex-col gap-3 pb-4">
+          {["Home", "About", "Programs", "Trainer", "Gallery"].map(
+            (item) => (
+              <li key={item}>
+                <a
+                  href={`/${item.toLowerCase()}`}
+                  onClick={() => setIsOpen(false)}
+                  className="block bg-[#EEEEEE] text-[#222831] px-4 py-2 rounded
+                             hover:bg-[#00ADB5] transition-colors"
+                >
+                  {item}
+                </a>
+              </li>
+            )
+          )}
+        </ul>
+      )}
     </nav>
   );
 }

@@ -1,7 +1,7 @@
 function Hero(){
 
     return(
-        <section className="hero-section bg-[#222831] text-white py-20 px-5 text-center w-full h-screen flex flex-col justify-center items-center">
+        <section className="hero-section bg-[#222831] text-white py-20 px-5 text-center w-full h-162 flex flex-col justify-center items-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Why to Join Us ?</h1>
             <p className="text-lg md:text-xl max-w-3xl mx-auto">
                 At Power GYM, we are dedicated to helping you achieve your fitness goals. 

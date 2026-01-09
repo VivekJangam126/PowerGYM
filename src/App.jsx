@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <Header />
-      <Nav />
+      
       <AppRoutes />
       <Footer />
     </>
