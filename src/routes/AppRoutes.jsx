@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import HomePage from "../pages/HomePage.jsx";
 import AboutPage from "../pages/AboutPage.jsx";
 import Programs from "../pages/Programs.jsx";
+import Trainer from "../pages/Trainer.jsx";
 function AppRoutes() {  
     return(
     <Routes>
@@ -12,6 +13,7 @@ function AppRoutes() {
          <Route path="/register" element={<HomePage /> } />
          <Route path="/about" element={<AboutPage/>} />
          <Route path="/programs" element={<Programs/>} />
+         <Route path="/trainer" element={<Trainer/>} />
     </Routes>
     )
 }

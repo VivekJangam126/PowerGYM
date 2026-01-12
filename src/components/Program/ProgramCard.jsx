@@ -79,3 +79,4 @@ function Modal({ showAll, onClose }) {
 }
 
 export default Modal;
+
