@@ -45,8 +45,8 @@ function TrainerCard() {
         ))}
          <TrainerDetails
         showAll={showModal}
-      onClose={() => setShowModal(false)}
-       trainer={selectedTrainer}
+        onClose={() => setShowModal(false)}
+        trainer={selectedTrainer}
         
       />
 
