@@ -29,8 +29,8 @@ function Modal({ showAll, onClose, trainer }) {
       className="w-32 h-40 object-cover rounded-lg mb-4"
     />
 
-    <h2 className="text-2xl font-bold mb-1">{trainer.fullName}</h2>
-
+    <h2 className="text-2xl font-bold mb-1">{trainer.fullName} </h2>
+   
     <p className="text-sm text-gray-700 mb-3">
       {trainer.experienceYears}+ years experience
     </p>

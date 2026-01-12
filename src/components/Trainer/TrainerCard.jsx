@@ -25,7 +25,7 @@ function TrainerCard() {
             <h2 className="text-lg font-semibold text-gray-800">
               {trainer.fullName}
             </h2>
-(
+
             <p className="text-sm text-gray-500">
               {trainer.experienceYears}+ years experience
             </p>
