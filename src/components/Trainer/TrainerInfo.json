@@ -108,7 +108,7 @@
     {
       "trainerId": "TR004",
       "fullName": "Sneha Kapoor",
-      "profileImage": "/trainer1.png", 
+      "profileImage": "/trainer2.png", 
       "gender": "Female",
       "experienceYears": 5,
       "specializations": [
@@ -248,7 +248,7 @@
     {
       "trainerId": "TR008",
       "fullName": "Sneha Kapoor",
-      "profileImage": "/trainer1.png", 
+      "profileImage": "/trainer2.png", 
       "gender": "Female",
       "experienceYears": 5,
       "specializations": [
@@ -388,7 +388,7 @@
     {
       "trainerId": "TR012",
       "fullName": "Sneha Kapoor",
-      "profileImage": "/trainer1.png", 
+      "profileImage": "/trainer2.png", 
       "gender": "Female",
       "experienceYears": 5,
       "specializations": [
