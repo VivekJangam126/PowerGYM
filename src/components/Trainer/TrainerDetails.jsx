@@ -18,6 +18,7 @@ function Modal({ showAll, onClose, trainer }) {
       {view === "profile" && (
         
   <div className="flex flex-col items-center text-center bg-[#d0d7e2] text-[#000000] rounded-xl shadow-xl w-full max-w-md p-6 relative">
+   
     
     <h1 className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center cursor-pointer absolute top-2 right-2" onClick={onClose} title="Close">X</h1>
     <img
