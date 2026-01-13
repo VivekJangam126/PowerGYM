@@ -7,7 +7,10 @@ function TrainerCard() {
       const [filter, setFilter] = useState("1"); // "1" for All, "2" for 2 Years, etc.
 
   return (
-    <div className="bg-white py-10 px-4 select-none rounded-lg shadow-md max-w-7xl mx-auto">
+    <div className="bg-gray-100 w-full py-10 px-4 select-none rounded-lg shadow-md mx-auto">
+       <h1 className="text-3xl font-bold text-center mb-5 ">
+        Our Trainers
+      </h1>
         <div className="text-center mb-10 px-6">
         <button onClick={() => setFilter("1")} className="bg-white border-2 border-black px-4 py-2 m-1 rounded-sm font-semibold hover:bg-[#00ADB5] hover:text-[#EEEEEE] transition-colors duration-300 ">
          All
@@ -23,7 +26,7 @@ function TrainerCard() {
        </button>
        </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4 max-w-7xl mx-auto">
         {data.trainers.map((trainer) => (
           (filter === "1" ||
            (filter === "2" && trainer.experienceYears >= 2) ||
