@@ -23,8 +23,12 @@ function JobForm() {
         setPhone('');
     }
   return (
-    <div className="p-8 bg-gray-100 text-white 
-    max-w-md mx-auto my-8 rounded-lg shadow-md ">
+    <div className="trainer-application-form flex justify-center items-center min-h-screen bg-white p-4 gap-20 flex-col md:flex-row">
+        <div>
+            <img src="https://tse3.mm.bing.net/th/id/OIP.3yYbXvuLFhVj1jmc1glbjAHaHa?cb=defcache2defcache=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Trainer Application" className="w-150 h-150 "/>
+        </div>
+    <div className="p-8 bg-white text-black
+    rounded-lg max-w-md w-full shadow-lg hover:shadow-2xl transition-shadow duration-300">
        <h2 className="text-2xl font-bold text-center mb-12 text-[#222831]">
         Apply for a Trainer Position
       </h2>
@@ -33,7 +37,7 @@ function JobForm() {
         handleSubmit(e);
       }}
 
-       className="space-y-6 text-black ">
+       className="space-y-6 text-black h-115">
         <div>
         
         <label className="block text-sm  mb-1 font-medium text-[#222831]">
@@ -74,6 +78,7 @@ function JobForm() {
           </button>
         </div>          
         </form>
+    </div>
     </div>
   );
 }

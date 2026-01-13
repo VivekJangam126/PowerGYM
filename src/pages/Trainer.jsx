@@ -1,5 +1,5 @@
 import Hero from "../components/Trainer/Hero";
-import TrainerList from "../components/Trainer/TrainerList.jsx";
+import TrainerList from "../components/Trainer/TrainerCard.jsx";
 import ClientReview from "../components/Trainer/ClientReview.jsx";
 import JobForm  from "../components/Trainer/JobForm.jsx";
 function Trainer() {

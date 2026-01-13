@@ -7,7 +7,11 @@ function TrainerCard() {
       const [filter, setFilter] = useState("1"); // "1" for All, "2" for 2 Years, etc.
 
   return (
-    <div className="bg-white py-10 px-4 select-none rounded-lg shadow-md max-w-7xl mx-auto">
+    <div className=" py-10 px-4 select-none rounded-lg shadow-md mx-auto bg-[#EEEEEE]">
+
+      <h1 className="text-3xl font-bold text-center mb-4 text-[#222831]">
+        Our Trainers
+      </h1>
         <div className="text-center mb-10 px-6">
         <button onClick={() => setFilter("1")} className="bg-white border-2 border-black px-4 py-2 m-1 rounded-sm font-semibold hover:bg-[#00ADB5] hover:text-[#EEEEEE] transition-colors duration-300 ">
          All
@@ -22,8 +26,8 @@ function TrainerCard() {
           4+ Years
        </button>
        </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+       
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-7xl mx-auto">
         {data.trainers.map((trainer) => (
           (filter === "1" ||
            (filter === "2" && trainer.experienceYears >= 2) ||
@@ -31,17 +35,17 @@ function TrainerCard() {
            (filter === "4" && trainer.experienceYears >= 4)) && (
           <div
             key={trainer.trainerId}
-            className="flex flex-col items-center p-6 border rounded-xl shadow-sm hover:shadow-lg transition"
+            className="flex flex-col items-center p-6 border rounded-xl shadow-sm hover:shadow-lg transition duration-300 hover:bg-[#f0f4f8] hover:scale-105"
           >
             {/* Trainer Image */}
             <img
               src={trainer.profileImage}
               alt={trainer.fullName}
-              className="w-40 h-48 object-cover rounded-lg mb-4"
+              className="w-40 h-48 object-cover rounded-lg mb-4 hover:scale-105 transition-transform duration-300 rotate-0 hover:rotate-3"
             />
 
             {/* Trainer Info */}
-            <h2 className="text-lg font-semibold text-gray-800">
+            <h2 className="text-lg font-semibold text-gray-800 ">
               {trainer.fullName}
             </h2>
 
