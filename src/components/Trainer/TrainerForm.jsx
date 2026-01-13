@@ -15,12 +15,16 @@ function Form({ trainer, onBack }) {
     };
   return (
     <div>
+
+
       <button
         onClick={onBack}
         className="mb-4 text-blue-500 underline"
       >
         ← Back to profile
       </button>
+
+      
 
       <h1 className="text-xl font-bold mb-4">
         Book the Trainer, {trainer.fullName}

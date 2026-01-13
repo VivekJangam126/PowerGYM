@@ -4,12 +4,31 @@ import  { useState } from "react";
 function TrainerCard() {
       const [showModal, setShowModal] = useState(false);
       const [selectedTrainer, setSelectedTrainer] = useState(null);
-      
+      const [filter, setFilter] = useState("1"); // "1" for All, "2" for 2 Years, etc.
 
   return (
     <div className="bg-white py-10 px-4 select-none rounded-lg shadow-md max-w-7xl mx-auto">
+        <div className="text-center mb-10 px-6">
+        <button onClick={() => setFilter("1")} className="bg-white border-2 border-black px-4 py-2 m-1 rounded-sm font-semibold hover:bg-[#00ADB5] hover:text-[#EEEEEE] transition-colors duration-300 ">
+         All
+       </button>
+        <button onClick={() => setFilter("2")} className="bg-white border-2 border-black m-1 px-4 py-2 rounded-sm font-semibold hover:bg-[#00ADB5] hover:text-[#EEEEEE] transition-colors duration-300 ">
+          2+ Years
+       </button>
+         <button onClick={() => setFilter("3")} className="bg-white border-2 border-black px-4 m-1 py-2 rounded-sm font-semibold hover:bg-[#00ADB5] hover:text-[#EEEEEE] transition-colors duration-300 ">
+          3+ Years
+       </button>
+        <button onClick={() => setFilter("4")} className="bg-white border-2 border-black px-4 m-1 py-2 rounded-sm font-semibold hover:bg-[#00ADB5] hover:text-[#EEEEEE] transition-colors duration-300 ">
+          4+ Years
+       </button>
+       </div>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {data.trainers.map((trainer) => (
+          (filter === "1" ||
+           (filter === "2" && trainer.experienceYears >= 2) ||
+           (filter === "3" && trainer.experienceYears >= 3) ||
+           (filter === "4" && trainer.experienceYears >= 4)) && (
           <div
             key={trainer.trainerId}
             className="flex flex-col items-center p-6 border rounded-xl shadow-sm hover:shadow-lg transition"
@@ -36,12 +55,12 @@ function TrainerCard() {
 
             {/* CTA */}
                 <button onClick={() => {
-    setSelectedTrainer(trainer);
-    setShowModal(true);
+            setSelectedTrainer(trainer);
+            setShowModal(true);
   }} className="mt-4 px-4 py-2 bg-[#00ADB5] text-white rounded-md hover:bg-[#222831] transition">
               View Profile
             </button>
-          </div>
+          </div>)
         ))}
          <TrainerDetails
         showAll={showModal}
