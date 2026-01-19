@@ -3,91 +3,56 @@
     {
       "id": "gym",
       "title": "Gym & Facilities",
+      "description": "Our gym features modern equipment, spacious workout zones, and a motivating environment for all fitness levels.",
       "images": [
-        "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1468436139062-f60a71c5c892?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1506089676908-3592f7389d4d?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1504439468489-c8920d796a29?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1519864016647-8f43b6e42b67?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1514512364185-4c2b678bfa49?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1517964603305-11c74e50b1e7?auto=format&fit=crop&w=800&q=80"
+        { "url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80", "alt": "Modern gym facility with equipment" },
+        { "url": "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=800&q=80", "alt": "Spacious gym floor" },
+        { "url": "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=800&q=80", "alt": "Functional training area" },
+        { "url": "https://images.unsplash.com/photo-1468436139062-f60a71c5c892?auto=format&fit=crop&w=800&q=80", "alt": "Gym with cardio and strength machines" }
       ]
     },
     {
       "id": "cardio",
       "title": "Cardio Equipment",
+      "description": "State-of-the-art cardio equipment to boost your endurance and heart health.",
       "images": [
-        "https://images.unsplash.com/photo-1504439468489-c8920d796a29?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1468436139062-f60a71c5c892?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1506089676908-3592f7389d4d?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1519864016647-8f43b6e42b67?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1514512364185-4c2b678bfa49?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1517964603305-11c74e50b1e7?auto=format&fit=crop&w=800&q=80"
+        { "url": "https://images.unsplash.com/photo-1504439468489-c8920d796a29?auto=format&fit=crop&w=800&q=80", "alt": "Treadmills in a gym" },
+        { "url": "https://images.unsplash.com/photo-1468436139062-f60a71c5c892?auto=format&fit=crop&w=800&q=80", "alt": "Row of elliptical machines" },
+        { "url": "https://images.unsplash.com/photo-1506089676908-3592f7389d4d?auto=format&fit=crop&w=800&q=80", "alt": "Stationary bikes" },
+        { "url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80", "alt": "Cardio zone overview" }
       ]
     },
     {
       "id": "upper",
       "title": "Upper Body",
+      "description": "Upper body machines and free weights for strength and muscle building.",
       "images": [
-        "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1519864016647-8f43b6e42b67?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1504439468489-c8920d796a29?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1468436139062-f60a71c5c892?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1506089676908-3592f7389d4d?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1514512364185-4c2b678bfa49?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1517964603305-11c74e50b1e7?auto=format&fit=crop&w=800&q=80"
+        { "url": "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=800&q=80", "alt": "Chest press machine" },
+        { "url": "https://images.unsplash.com/photo-1519864016647-8f43b6e42b67?auto=format&fit=crop&w=800&q=80", "alt": "Lat pulldown machine" },
+        { "url": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80", "alt": "Dumbbell rack for upper body" },
+        { "url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80", "alt": "Shoulder press area" }
       ]
     },
     {
       "id": "lower",
       "title": "Lower Body",
+      "description": "Lower body equipment for powerful legs and functional movement.",
       "images": [
-        "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1514512364185-4c2b678bfa49?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1517964603305-11c74e50b1e7?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1504439468489-c8920d796a29?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1468436139062-f60a71c5c892?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1506089676908-3592f7389d4d?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1519864016647-8f43b6e42b67?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80"
+        { "url": "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80", "alt": "Leg press machine" },
+        { "url": "https://images.unsplash.com/photo-1514512364185-4c2b678bfa49?auto=format&fit=crop&w=800&q=80", "alt": "Squat rack" },
+        { "url": "https://images.unsplash.com/photo-1517964603305-11c74e50b1e7?auto=format&fit=crop&w=800&q=80", "alt": "Hamstring curl machine" },
+        { "url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80", "alt": "Lower body training area" }
       ]
     },
     {
       "id": "dumbbells",
       "title": "Dumbbells & Free Weights",
+      "description": "A full range of dumbbells and free weights for versatile training.",
       "images": [
-        "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1504439468489-c8920d796a29?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1468436139062-f60a71c5c892?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1506089676908-3592f7389d4d?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1519864016647-8f43b6e42b67?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1514512364185-4c2b678bfa49?auto=format&fit=crop&w=800&q=80"
+        { "url": "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80", "alt": "Dumbbells on rack" },
+        { "url": "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80", "alt": "Free weights area" },
+        { "url": "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=800&q=80", "alt": "Barbells and plates" },
+        { "url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80", "alt": "Kettlebells and dumbbells" }
       ]
     }
   ]
