@@ -34,9 +34,12 @@ function TrainerCard() {
            (filter === "3" && trainer.experienceYears >= 3) ||
            (filter === "4" && trainer.experienceYears >= 4)) && (
           <div
-            key={trainer.trainerId}
-            className="flex flex-col items-center p-6 border rounded-xl shadow-sm hover:shadow-lg transition duration-300 hover:bg-[#f0f4f8] hover:scale-105"
-          >
+  key={trainer.trainerId}
+  className="flex flex-col items-center p-6 border rounded-xl shadow-sm 
+             hover:shadow-lg transition duration-300 hover:bg-[#f0f4f8] hover:scale-105
+             h-full"
+>
+
             {/* Trainer Image */}
             <img
               src={trainer.profileImage}
@@ -53,7 +56,7 @@ function TrainerCard() {
               {trainer.experienceYears}+ years experience
             </p>
 
-            <p className="text-sm mt-3 text-center text-gray-600">
+            <p className="text-sm m-3 text-center text-gray-600">
               {trainer.bio}
             </p>
 
@@ -61,7 +64,7 @@ function TrainerCard() {
                 <button onClick={() => {
             setSelectedTrainer(trainer);
             setShowModal(true);
-  }} className="mt-4 px-4 py-2 bg-[#00ADB5] text-white rounded-md hover:bg-[#222831] transition">
+  }} className="mt-auto px-4 py-2 bg-[#00ADB5] text-white rounded-md hover:bg-[#222831] transition">
               View Profile
             </button>
           </div>)
