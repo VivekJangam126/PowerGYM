@@ -1,0 +1,66 @@
+{
+    "images": [
+        {
+            "id": 1,
+            "url": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80",
+            "category": "trainers"
+        },
+        {
+            "id": 2,
+            "url": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=400&q=80",
+            "category": "events"
+        },
+        {
+            "id": 3,
+            "url": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80",
+            "category": "workouts"
+        },
+        {
+            "id": 4,
+            "url":  "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80",
+            "category": "facilities"
+        },
+        {
+            "id": 5,
+            "url": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=400&q=80",
+            "category": "trainers"
+        },
+        {
+            "id": 6,
+            "url": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80",
+            "category": "events"
+        },
+        {
+            "id": 7,
+            "url": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80",
+            "category": "workouts"
+        },
+        {
+            "id": 8,
+            "url": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=400&q=80",
+            "category": "facilities"
+        },
+        {
+            "id": 9,
+            "url": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80",
+            "category": "trainers"
+        },
+        {
+            "id": 10,
+            "url": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80",
+            "category": "events"
+        },
+    {
+            "id": 11,
+            "url": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=400&q=80",
+            "category": "workouts"
+        },
+        {
+            "id": 12,
+            "url": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80",
+            "category": "facilities"
+        }
+
+
+    ]
+}
