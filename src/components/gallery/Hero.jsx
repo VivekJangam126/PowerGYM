@@ -1,19 +1,8 @@
+
+import data from "./photos.json";
+
 function Hero() {
-    // Only vary gridColumn for width, keep gridRow the same for all
-    const images = [
-        { src: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80", col: "span 4" },
-        { src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80", col: "span 2" },
-        { src: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80", col: "span 4" },
-        { src: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80", col: "span 2" },
-        { src: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80", col: "span 3" },
-        { src: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=400&q=80", col: "span 4" },
-        { src: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80", col: "span 2" },
-        { src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80", col: "span 3" },
-        { src: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80", col: "span 4" },
-        { src: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80", col: "span 2" },
-        { src: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=400&q=80", col: "span 4" },
-        { src: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80", col: "span 2" },
-    ];
+    const images = data.images;
 
     return (
         <div className="relative w-screen h-163 overflow-hidden">
@@ -30,8 +19,8 @@ function Hero() {
                         }}
                     >
                         <img
-                            src={img.src}
-                            alt={`Gallery ${idx + 1}`}
+                            src={img.url}
+                            alt={img.title || `Gallery ${idx + 1}`}
                             className="w-full h-full object-cover hover:scale-105 transition-transform duration-300 border-2 border-white shadow-sm"
                             style={{ minHeight: 0, minWidth: 0 }}
                         />

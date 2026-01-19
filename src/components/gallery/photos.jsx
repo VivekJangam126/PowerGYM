@@ -60,9 +60,25 @@ function GalleryPhotos() {
               alt={img.alt || "Gallery Image"}
               className="w-full h-40 sm:h-48 object-cover transition-transform duration-300 group-hover:scale-105 group-hover:brightness-90 border-white border-2 " 
             />
-            
+             
+              <div className="absolute inset-0 flex items-end justify-center">
+        <div className="w-full bg-black/60 p-4 text-center 
+                        translate-y-full opacity-0
+                        transition-all duration-200 ease-out
+                        group-hover:translate-y-0 group-hover:opacity-100">
+        <h3 className="text-white text-xl font-semibold">
+          {img.title}
+        </h3>
+        <p className="text-gray-200 text-sm mt-1">
+          {img.description}
+        </p>
+        </div>
+        
+      </div>
+      
           </div>
         ))}
+        
       </div>
       
     </div>

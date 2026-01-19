@@ -2,65 +2,99 @@
     "images": [
         {
             "id": 1,
-            "url": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80",
-            "category": "trainers"
+            "url": "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=800&q=80",
+            "category": "trainers",
+            "title": "Personal Training Session",
+            "description": "One-on-one session with a certified personal trainer.",
+            "col": "span 4"
         },
         {
             "id": 2,
-            "url": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=400&q=80",
-            "category": "events"
+            "url": "https://www.technogym.com/wpress/wp-content/uploads/2020/01/og_img_fb-functional-training-classes.jpg",
+            "category": "events",
+            "title": "Functional Training Camp",
+            "description": "Intense group functional training session.",
+            "col": "span 2"
         },
         {
             "id": 3,
-            "url": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80",
-            "category": "workouts"
+            "url": "https://i.ytimg.com/vi/_yMizj6_4zs/maxresdefault.jpg",
+            "category": "workouts",
+            "title": "Deadlift Session",
+            "description": "Member performing deadlifts in the gym.",
+            "col": "span 4"
         },
         {
             "id": 4,
-            "url":  "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80",
-            "category": "facilities"
+            "url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80",
+            "category": "facilities",
+            "title": "Modern Gym Facilities",
+            "description": "State-of-the-art gym equipment and facilities.",
+            "col": "span 2"
         },
         {
             "id": 5,
-            "url": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=400&q=80",
-            "category": "trainers"
+            "url": "https://images.unsplash.com/photo-1504439468489-c8920d796a29?auto=format&fit=crop&w=800&q=80",
+            "category": "trainers",
+            "title": "Group Training",
+            "description": "Group training session with a male coach.",
+            "col": "span 3"
         },
         {
             "id": 6,
-            "url": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80",
-            "category": "events"
+            "url": "https://www.bodymentors.co.uk/wp-content/uploads/Powerlifting_Meet_2025.jpg",
+            "category": "events",
+            "title": "Powerlifting Meet",
+            "description": "Competitive powerlifting event at the gym.",
+            "col": "span 4"
         },
         {
             "id": 7,
-            "url": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80",
-            "category": "workouts"
+            "url": "https://drmedjulia.com/wp-content/uploads/2021/03/cardio-endurance-workout-for-beginners-to-intermediate_605c711827f97.jpeg",
+            "category": "workouts",
+            "title": "Cardio Workout",
+            "description": "Member engaged in cardio exercises.",
+            "col": "span 2"
         },
         {
             "id": 8,
-            "url": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=400&q=80",
-            "category": "facilities"
+            "url": "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=800&q=80",
+            "category": "facilities",
+            "title": "Swimming Pool",
+            "description": "Indoor swimming pool area.",
+            "col": "span 3"
         },
         {
             "id": 9,
-            "url": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80",
-            "category": "trainers"
+            "url": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80",
+            "category": "trainers",
+            "title": "Mobility Coaching",
+            "description": "Trainer guiding a member through mobility exercises.",
+            "col": "span 2"
         },
         {
             "id": 10,
-            "url": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80",
-            "category": "events"
+            "url": "https://images.unsplash.com/photo-1468436139062-f60a71c5c892?auto=format&fit=crop&w=800&q=80",
+            "category": "events",
+            "title": "Calisthenics Showdown",
+            "description": "Bodyweight skills and calisthenics competition.",
+            "col": "span 4"
         },
-    {
+        {
             "id": 11,
-            "url": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=400&q=80",
-            "category": "workouts"
+            "url": "https://images.unsplash.com/photo-1506812574058-fc75fa93fead?auto=format&fit=crop&w=800&q=80",
+            "category": "workouts",
+            "title": "HIIT Training",
+            "description": "High Intensity Interval Training session.",
+            "col": "span 2"
         },
         {
             "id": 12,
-            "url": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80",
-            "category": "facilities"
+            "url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80",
+            "category": "facilities",
+            "title": "Weightlifting Area",
+            "description": "Dedicated area for weightlifting exercises.",
+            "col": "span 4"
         }
-
-
     ]
 }
