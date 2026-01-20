@@ -4,6 +4,7 @@ import AboutPage from "../pages/AboutPage.jsx";
 import Programs from "../pages/Programs.jsx";
 import Trainer from "../pages/Trainer.jsx";
 import Gallery from "../pages/Gallery.jsx";
+import Membership from "../pages/MemberShip.jsx";
 function AppRoutes() {  
     return(
     <Routes>
@@ -15,6 +16,7 @@ function AppRoutes() {
          <Route path="/programs" element={<Programs/>} />
          <Route path="/trainer" element={<Trainer/>} />
          <Route path="/gallery" element={<Gallery/>} />
+         <Route path="/membership" element={<Membership/>} />
 
     </Routes>
     )
