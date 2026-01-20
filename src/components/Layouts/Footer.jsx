@@ -1,13 +1,30 @@
 import logo from "../../assets/logo2.png";
 
+const Dumbbell = () => (
+  <svg
+    viewBox="0 0 64 64"
+    className="w-8 h-8 fill-white"
+  >
+    <rect x="28" y="10" width="8" height="44" rx="2" />
+    <rect x="16" y="14" width="8" height="36" rx="2" />
+    <rect x="40" y="14" width="8" height="36" rx="2" />
+  </svg>
+);
+
 function Footer() {
+  const handleHit = (e) => {
+    const btn = e.currentTarget;
+    btn.classList.remove("hit");
+    void btn.offsetWidth; // force reflow
+    btn.classList.add("hit");
+  };
+
   return (
     <footer className="bg-black text-white border-t border-white/10">
-      
-      {/* Main Footer Content */}
+
       <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10">
 
-        {/* Brand Section */}
+        {/* Brand */}
         <div>
           <div className="flex items-center gap-3 mb-4">
             <img src={logo} alt="Power GYM" className="w-12 h-12 rounded-full" />
@@ -36,7 +53,7 @@ function Footer() {
           </ul>
         </div>
 
-        {/* Contact Info */}
+        {/* Contact */}
         <div>
           <h3 className="text-lg font-semibold mb-4 uppercase tracking-wide">
             Contact
@@ -47,14 +64,20 @@ function Footer() {
             <li>✉️ powergym@email.com</li>
           </ul>
 
-          <button className="mt-4 bg-red-600 px-4 py-2 rounded font-semibold hover:bg-red-700 transition">
+          {/* Animated Button */}
+          <button
+            onClick={handleHit}
+            className="relative mt-4 bg-red-600 px-5 py-2 rounded font-semibold overflow-hidden"
+          >
+            <span className="dumbbell absolute left-1/2 -translate-x-1/2 -top-10">
+              <Dumbbell />
+            </span>
             Enquire Now
           </button>
         </div>
 
       </div>
 
-      {/* Bottom Bar */}
       <div className="border-t border-white/10 py-4 text-center text-white/50 text-sm">
         &copy; {new Date().getFullYear()} Power GYM. All rights reserved.
       </div>

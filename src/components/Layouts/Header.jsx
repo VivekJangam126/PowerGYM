@@ -24,12 +24,12 @@ function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-black text-white border-b border-white/10">
-      <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4  flex items-center justify-between">
 
         {/* Logo */}
-        <div className="flex items-center gap-3">
-          <img src={logo} alt="Power GYM" className="w-10 h-10 rounded-full" />
-          <h1 className="text-xl font-bold tracking-wide">
+        <div className="flex items-center gap-2">
+          <img src={logo} alt="Power GYM" className="w-20 h-20 rounded-full" />
+          <h1 className="text-2xl font-bold tracking-wide">
             Power<span className="text-red-600">GYM</span>
           </h1>
         </div>
