@@ -1,16 +1,19 @@
 import Hero from "../components/about/Hero.jsx";
-import Membership from "../components/about/membership.jsx";
-import Offers from "../components/about/offers.jsx";
-import Perks from "../components/about/perks.jsx";
-
+import Who from "../components/about/WhoWeAre.jsx";
+import Philosophy from "../components/about/TrainingPhilosophy.jsx";
+import GymValues from "../components/about/GymValues.jsx";
+import FacilitiesPreview from "../components/about/FacilitiesPreview.jsx"; 
+import Contact from "../components/about/Contact.jsx"; 
 function About(){
 
 return (
     <>
     <Hero/>
-    <Membership/>
-    <Offers/>
-    <Perks/>
+    <Who/>
+    <Philosophy/>
+    <GymValues/>
+    <FacilitiesPreview/>
+    <Contact/>
     </>
 )
 
