@@ -1,175 +1,98 @@
 import { useState } from "react";
-import { Menu, X, User, Share2 } from "lucide-react";
-import phoneImg from "../../assets/insta.png";
-import whats from "../../assets/whats.png";
-import face from "../../assets/face.png";
+import { Menu, X } from "lucide-react";
 import logo from "../../assets/logo2.png";
-import LoginModal from "../auth/login.jsx";
-import RegisterModal from "../auth/register.jsx";
+import ContactForm from "../auth/register.jsx";
 
 function Header() {
-  const [activePanel, setActivePanel] = useState(null); 
-  // "menu" | "auth" | "social" | null
-
+  const [menuOpen, setMenuOpen] = useState(false);
   const [open, setOpen] = useState(false);
-  const [authType, setAuthType] = useState(null);
 
-  const openLogin = () => {
-    setAuthType("login");
+  const openContact = () => {
     setOpen(true);
-    setActivePanel(null);
+    setMenuOpen(false);
   };
 
-  const openRegister = () => {
-    setAuthType("register");
-    setOpen(true);
-    setActivePanel(null);
-  };
+  const navItems = [
+    { name: "Home", path: "/" },
+    { name: "Programs", path: "/programs" },
+    { name: "Trainers", path: "/trainer" },
+    { name: "Timetable", path: "/timetable" },
+    { name: "Gallery", path: "/gallery" },
+    { name: "About", path: "/about" },
+    { name: "Membership", path: "/membership" },
+  ];
 
   return (
-    <header className="sticky top-0 z-50  bg-[#222831] text-[#EEEEEE] select-none ">
-      
-      {/* TOP BAR */}
-      <div className="flex items-center justify-between px-4 py-3">
-        
+    <header className="sticky top-0 z-50 bg-black text-white border-b border-white/10">
+      <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+
         {/* Logo */}
         <div className="flex items-center gap-3">
-          <img src={logo} alt="Logo" className="w-12 h-12 rounded-full" />
-          <h1 className="text-xl md:text-3xl font-bold tracking-wide">
-            Power GYM
+          <img src={logo} alt="Power GYM" className="w-10 h-10 rounded-full" />
+          <h1 className="text-xl font-bold tracking-wide">
+            Power<span className="text-red-600">GYM</span>
           </h1>
         </div>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-4">
-        <nav className="hidden md:flex items-center gap-4 ">
-          {["Home", "About", "Programs", "Trainer", "Gallery"].map(item => (
+        <nav className="hidden md:flex items-center gap-6">
+          {navItems.map(item => (
             <a
-              key={item}
-              href={`/${item.toLowerCase()}`}
-              className="bg-[#EEEEEE] text-[#222831] px-3 py-1 rounded
-                         hover:bg-[#00ADB5] transition-colors"
+              key={item.name}
+              href={item.path}
+              className="text-sm uppercase tracking-wide text-white/80 hover:text-red-500 transition"
             >
-              {item}
+              {item.name}
             </a>
           ))}
         </nav>
 
-        {/* Desktop Right */}
-        <div className="hidden md:flex items-center gap-4">
+        {/* CTA */}
+        <div className="hidden md:block">
           <button
-            onClick={openLogin}
-            className="bg-[#393E46] px-3 py-1 rounded hover:bg-[#00ADB5]"
+            onClick={openContact}
+            className="bg-red-600 px-5 py-2 rounded font-semibold hover:bg-red-700 transition"
           >
-            Login
-          </button>
-          <button
-            onClick={openRegister}
-            className="bg-[#393E46] px-3 py-1 rounded hover:bg-[#00ADB5]"
-          >
-            Register
-          </button>
-
-          <div className="hidden lg:flex items-center gap-2">
-  <span className="text-sm">Follow Us:</span>
-  <img src={phoneImg} className="w-6 h-6" />
-  <img src={face} className="w-6 h-6" />
-  <img src={whats} className="w-6 h-6" />
-</div>
-
-        </div>
-        </div>
-
-        {/* MOBILE ICON BAR */}
-        <div className="flex md:hidden items-center gap-3">
-          <button
-            onClick={() =>
-              setActivePanel(activePanel === "menu" ? null : "menu")
-            }
-            className="p-2 bg-[#EEEEEE] text-[#222831] rounded"
-          >
-            {activePanel === "menu" ? <X /> : <Menu />}
-          </button>
-
-          <button
-            onClick={() =>
-              setActivePanel(activePanel === "auth" ? null : "auth")
-            }
-            className="p-2 bg-[#EEEEEE] text-[#222831] rounded"
-          >
-            {activePanel === "auth" ? <X /> : <User />}
-          </button>
-
-          <button
-            onClick={() =>
-              setActivePanel(activePanel === "social" ? null : "social")
-            }
-            className="p-2 bg-[#EEEEEE] text-[#222831] rounded mr-2"
-          >
-            {activePanel === "social" ? <X /> : <Share2 />}
-           
+            Enquire Now
           </button>
         </div>
+
+        {/* Mobile */}
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="md:hidden p-2 border border-white/20 rounded"
+        >
+          {menuOpen ? <X /> : <Menu />}
+        </button>
       </div>
 
-      {/* MOBILE PANELS */}
-      {activePanel === "menu" && (
-        <div className="md:hidden px-4 pb-4 flex flex-col gap-3">
-          {["Home", "About", "Programs", "Trainer", "Gallery"].map(item => (
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="md:hidden bg-black border-t border-white/10 px-4 py-4 flex flex-col gap-4">
+          {navItems.map(item => (
             <a
-              key={item}
-              href={`/${item.toLowerCase()}`}
-              onClick={() => setActivePanel(null)}
-              className="bg-[#EEEEEE] text-[#222831] px-4 py-2 rounded hover:bg-[#00ADB5]"
+              key={item.name}
+              href={item.path}
+              onClick={() => setMenuOpen(false)}
+              className="text-white/80 uppercase tracking-wide hover:text-red-500"
             >
-              {item}
+              {item.name}
             </a>
           ))}
-        </div>
-      )}
 
-      {activePanel === "auth" && (
-        <div className="md:hidden px-4 pb-4 flex flex-col gap-3">
           <button
-            onClick={openLogin}
-            className="bg-[#393E46] py-2 rounded hover:bg-[#00ADB5]"
+            onClick={openContact}
+            className="mt-3 bg-red-600 py-2 rounded font-semibold hover:bg-red-700"
           >
-            Login
-          </button>
-          <button
-            onClick={openRegister}
-            className="bg-[#393E46] py-2 rounded hover:bg-[#00ADB5]"
-          >
-            Register
+            Enquire Now
           </button>
         </div>
       )}
 
-      {activePanel === "social" && (
-        <div className="md:hidden px-4 pb-4 flex gap-4 items-center">
-          <img src={phoneImg} className="w-7 h-7 hover:scale-110" />
-          <img src={face} className="w-7 h-7 hover:scale-110" />
-          <img src={whats} className="w-7 h-7 hover:scale-110" />
-        </div>
-      )}
-
-      {/* MODALS */}
-      <LoginModal
-        isOpen={open && authType === "login"}
-        onClose={() => {
-          setOpen(false);
-          setAuthType(null);
-        }}
-        onSwitchToRegister={() => setAuthType("register")}
-      />
-
-      <RegisterModal
-        isOpen={open && authType === "register"}
-        onClose={() => {
-          setOpen(false);
-          setAuthType(null);
-        }}
-        onSwitchToLogin={() => setAuthType("login")}
+      {/* Contact Modal */}
+      <ContactForm
+        isOpen={open}
+        onClose={() => setOpen(false)}
       />
     </header>
   );
