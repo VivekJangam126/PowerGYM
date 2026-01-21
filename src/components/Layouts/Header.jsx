@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import logo from "../../assets/logo2.png";
-import ContactForm from "../auth/register.jsx";
+import ContactForm from "./ContactModal.jsx";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);

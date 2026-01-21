@@ -11,6 +11,7 @@ import TrainerDetails from "../components/Trainer/TrainerDetails.jsx";
 import TrainerEnquiryForm from "../components/Trainer/TrainerEnquiryForm.jsx";
 import Payment from "../pages/Payment.jsx";
 import TimeTable from "../pages/TimeTable.jsx";
+import ContactPage from "../pages/ContactPage.jsx";
 function AppRoutes() {  
     return(
     <Routes>
@@ -29,6 +30,7 @@ function AppRoutes() {
 <Route path="/trainers/:id/enquiry" element={<TrainerEnquiryForm />} />
 <Route path="/timetable" element={<TimeTable/>} />
 <Route path="/payment" element={<Payment/>} />
+<Route path="/contact" element={<ContactPage/>} />
     </Routes>
     )
 }
