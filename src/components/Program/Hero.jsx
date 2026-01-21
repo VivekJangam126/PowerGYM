@@ -1,64 +1,58 @@
-function Hero(){
-   const programIntro = [
-  {
-    title: "Structured Training",
-    desc: "Well-planned workout programs designed with proper progression for safe and effective results.",
-    icon: "📋",
-  },
-  {
-    title: "Goal-Oriented Programs",
-    desc: "Programs tailored for fat loss, muscle gain, strength building, and total body transformation.",
-    icon: "🎯",
-  },
-  {
-    title: "All Fitness Levels",
-    desc: "Beginner-friendly to advanced-level programs so everyone can train with confidence.",
-    icon: "💪",
-  },
-  {
-    title: "Expert Guidance",
-    desc: "Designed by experienced trainers focusing on correct form, safety, and long-term growth.",
-    icon: "🧠",
-  },
-];
+function Hero() {
+  const programIntro = [
+    {
+      title: "Structured Training",
+      desc: "Well-planned workout programs with proper progression for safe and effective results.",
+    },
+    {
+      title: "Goal-Oriented Programs",
+      desc: "Focused programs for fat loss, muscle gain, strength building, and transformation.",
+    },
+    {
+      title: "All Fitness Levels",
+      desc: "Programs designed for beginners as well as advanced-level trainees.",
+    },
+    {
+      title: "Expert Guidance",
+      desc: "Designed by experienced trainers with emphasis on form, safety, and long-term growth.",
+    },
+  ];
 
-    return(
-        <section className="bg-[#2f3742] py-20 px-6">
-  <div className="max-w-7xl mx-auto text-center mb-14">
-    <h2 className="text-4xl font-bold text-[#ecf1f8] mb-4">
-      How Our Programs Work
-    </h2>
-    <p className="text-gray-300 max-w-2xl mx-auto">
-      Our training programs are designed to deliver real, measurable results
-      for every fitness level.
-    </p>
-  </div>
-
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-    {programIntro.map((item, index) => (
-      <div
-        key={index}
-        className="bg-[#EEEEEE] rounded-xl p-6 text-left
-                   transform transition-all duration-500
-                   hover:-translate-y-3 hover:shadow-xl
-                   animate-fadeUp"
-        style={{ animationDelay: `${index * 150}ms` }}
-      >
-        <div className="text-4xl mb-4">{item.icon}</div>
-
-        <h3 className="text-xl font-semibold text-[#222831] mb-3">
-          {item.title}
-        </h3>
-
-        <p className="text-[#393E46]">
-          {item.desc}
+  return (
+    <section className="bg-black py-24 px-6 select-none">
+      <div className="max-w-6xl mx-auto text-center mb-16">
+        <span className="text-red-600 font-semibold tracking-widest">
+          PROGRAMS
+        </span>
+        <h2 className="text-4xl font-bold text-white mt-4 mb-6">
+          How Our Programs Work
+        </h2>
+        <p className="text-white/70 max-w-2xl mx-auto text-lg">
+          Our training programs are structured to deliver real, measurable
+          results while maintaining safety and consistency.
         </p>
       </div>
-    ))}
-  </div>
-</section>
 
-    )
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        {programIntro.map((item, index) => (
+          <div
+            key={index}
+            className="bg-gray-800/50 backdrop-blur-sm border border-white/10 rounded-xl p-6
+                       hover:border-red-600 hover:-translate-y-2
+                       transition-all duration-300 text-center cursor-default"
+          >
+            <h3 className="text-xl font-semibold text-white mb-3">
+              {item.title}
+            </h3>
 
+            <p className="text-white/70 text-sm leading-relaxed">
+              {item.desc}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 }
+
 export default Hero;

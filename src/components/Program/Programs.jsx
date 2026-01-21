@@ -1,109 +1,89 @@
-import React, { useState } from "react";
-import Card from "./ProgramCard.jsx";
+import { useState } from "react";
+import programsData from "./programs.json";
+import { Link } from "react-router-dom";
+
 function Program() {
-
   const [filter, setFilter] = useState("All");
-  const [showAll, setShowAll] = useState(false);
 
-    const openCard = () => {
-        setShowAll(true);
-    };
-  
+  const levels = ["All", "Beginner", "Intermediate", "Expert"];
+
   return (
-    <section className=" bg-[#424b58] text-white py-15 select-none items-center w-full px-5">
-      <h2 className="text-4xl font-bold text-center mb-12 text-[#ecf1f8]">
-        Program Overview
-      </h2>
-      <div className="text-center mb-12 px-6 max-w-3xl mx-auto text-lg text-black flex gap-1 md:gap-1 justify-center flex-wrap items-center ">
-         <button onClick={() => setFilter("All")} className="bg-white border-2 border-black px-4 py-2 rounded-sm font-semibold hover:bg-[#00ADB5] hover:text-[#EEEEEE] transition-colors duration-300 ">
-         All
-       </button>
-        <button onClick={() => setFilter("Intermediate")} className="bg-white border-2 border-black px-4 py-2 rounded-sm font-semibold hover:bg-[#00ADB5] hover:text-[#EEEEEE] transition-colors duration-300 ">
-          Intermediate
-       </button>
-         <button onClick={() => setFilter("Expert")} className="bg-white border-2 border-black px-4 py-2 rounded-sm font-semibold hover:bg-[#00ADB5] hover:text-[#EEEEEE] transition-colors duration-300 ">
-         Expert
-       </button>
-        <button onClick={() => setFilter("Beginner")} className="bg-white border-2 border-black px-4 py-2 rounded-sm font-semibold hover:bg-[#00ADB5] hover:text-[#EEEEEE] transition-colors duration-300 ">
-          Beginer
-       </button>
-      </div>
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <section className="bg-black py-24 px-6 select-none">
+      <div className="max-w-6xl mx-auto">
 
-        {[
-          {
-            title: "Strength Training",
-            desc: "Build muscle and increase overall strength with structured weight training programs.",
-            level: "Beginner",
-          },
-          {
-            title: "Weight Loss Program",
-            desc: "Burn fat effectively through cardio, HIIT, and personalized workout plans.",
-            level: "Intermediate",
-          },
-          {
-            title: "Personal Training",
-            desc: "One-on-one training sessions focused on your personal fitness goals.",
-            level: "Expert",
-          },
-          {
-            title: "Functional Training",
-            desc: "Improve mobility, balance, and real-life strength with functional workouts.",
-            level: "Intermediate",
-          },
-          {
-            title: "Cardio & HIIT",
-            desc: "High-intensity workouts designed to boost stamina and burn calories fast.",
-            level: "Intermediate",
-          },
-          {
-            title: "Body Transformation",
-            desc: "Complete physique transformation with guided workouts and nutrition support.",
-            level: "Beginner",
-          },
-       ].map((program, index) => {
-  if (filter !== "All" && program.level !== filter) {
-    return null;
-  }
-  return (
-    <div
-      key={index}
-      className="bg-[#EEEEEE] rounded-xl shadow-md p-6
-                 hover:shadow-xl hover:scale-105
-                 transition-all duration-300"
-    >
-      <img
-        src="https://th.bing.com/th/id/OIP.s8grxXgiXvDnCe0ciFQKewHaE8"
-        alt={program.title}
-        className="mb-4 w-full h-48 object-cover rounded-lg"
-      />
+        {/* Heading */}
+        <div className="text-center mb-16">
+          <span className="text-red-600 font-semibold tracking-widest">
+            PROGRAMS
+          </span>
+          <h2 className="text-4xl font-bold text-white mt-4 mb-6">
+            Program Overview
+          </h2>
+          <p className="text-white/70 max-w-2xl mx-auto text-lg">
+            Explore our structured training programs designed for different
+            fitness levels and goals.
+          </p>
+        </div>
 
-      <h3 className="text-xl font-semibold mb-3 text-[#222831]">
-        {program.title}
-      </h3>
+        {/* Filters */}
+        <div className="flex justify-center gap-3 flex-wrap mb-12">
+          {levels.map(level => (
+            <button
+              key={level}
+              onClick={() => setFilter(level)}
+              className={`px-5 py-2 rounded border text-sm font-semibold transition
+                ${
+                  filter === level
+                    ? "bg-red-600 border-red-600 text-white"
+                    : "border-white/20 text-white/70 hover:border-red-600 hover:text-white"
+                }`}
+            >
+              {level}
+            </button>
+          ))}
+        </div>
 
-      <p className="text-[#393E46] mb-4">
-        {program.desc}
-      </p>
+        {/* Programs Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {programsData
+            .filter(
+              program => filter === "All" || program.level === filter
+            )
+            .map(program => (
+              <div
+                key={program.id}
+                className="border border-white/10 rounded-xl overflow-hidden
+                           hover:border-red-600 hover:-translate-y-2
+                           transition-all duration-300"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61"
+                  alt={program.title}
+                  className="w-full h-48 object-cover"
+                />
 
-      <button onClick={openCard}
-        className="inline-block bg-[#00ADB5] text-[#222831] px-4 py-2 rounded hover:bg-[#222831] hover:text-[#EEEEEE] font-semibold transition-colors duration-300"
-      >
-        View Program →
-      </button>
-    </div>
-     );
-     })
-        }
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-white mb-3">
+                    {program.title}
+                  </h3>
+
+                  <p className="text-white/70 text-sm mb-6">
+                    {program.shortDesc}
+                  </p>
+
+                  <Link
+                    to={`/programs/${program.id}`}
+                    className="inline-block bg-red-600 text-white px-5 py-2 rounded
+                               font-semibold hover:bg-red-700 transition"
+                  >
+                    View Program
+                  </Link>
+                </div>
+              </div>
+            ))}
+        </div>
 
       </div>
-
-        <Card
-        showAll={showAll}
-        onClose={() => {
-          setShowAll(false);
-        }} 
-      />
     </section>
   );
 }
