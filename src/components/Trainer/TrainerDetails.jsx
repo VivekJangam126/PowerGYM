@@ -1,68 +1,117 @@
-import logo from "../../assets/logo2.png";
-import { useState } from "react";
-import Form from "./TrainerForm.jsx";
-function Modal({ showAll, onClose, trainer }) {
-  if (!showAll || !trainer) return null;
-    const [view, setView] = useState("profile"); // "profile" | "form"
+import { useParams, Link } from "react-router-dom";
+import trainersData from "./trainers.json";
+
+function TrainerDetails() {
+  const { id } = useParams();
+  const trainer = trainersData.find(t => t.id === id);
+
+  if (!trainer) {
+    return (
+      <section className="min-h-screen bg-black flex items-center justify-center text-white">
+        <p>Trainer not found.</p>
+      </section>
+    );
+  }
+
   return (
-    // Overlay
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/70"
-      onClick={onClose}
-    >
-        <div
-    className="bg-[#d0d7e2] text-black rounded-xl shadow-xl w-full max-w-md p-6 relative"
-    onClick={(e) => e.stopPropagation()}
-  >
-      {/* Modal box */}
-      {view === "profile" && (
-        
-  <div className="flex flex-col items-center text-center bg-[#d0d7e2] text-[#000000] rounded-xl shadow-xl w-full max-w-md p-6 relative">
-    
-    <h1 className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center cursor-pointer absolute top-2 right-2" onClick={onClose} title="Close">X</h1>
-    <img
-      src={trainer.profileImage}
-      alt={trainer.fullName}
-      className="w-32 h-40 object-cover rounded-lg mb-4"
-    />
+    <section className="bg-black py-24 px-6 select-none">
+      <div className="max-w-5xl mx-auto">
 
-    <h2 className="text-2xl font-bold mb-1">{trainer.fullName} </h2>
-   
-    <p className="text-sm text-gray-700 mb-3">
-      {trainer.experienceYears}+ years experience
-    </p>
+        {/* Header */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-16 items-start">
+          <div className="md:col-span-1">
+            <img
+              src={trainer.photo}
+              alt={trainer.name}
+              className="w-full h-80 object-cover rounded-xl border border-white/10"
+            />
+          </div>
 
-    <p className="text-sm text-gray-700 mb-4">{trainer.bio}</p>
+          <div className="md:col-span-2">
+            <span className="text-red-600 font-semibold tracking-widest">
+              TRAINER PROFILE
+            </span>
+            <h1 className="text-4xl font-bold text-white mt-4 mb-4">
+              {trainer.name}
+            </h1>
 
-    <div className="w-full text-ceonter mb-4">
-      <h3 className="font-semibold text-lg mb-2">Specializations</h3>
-      <ul className="text-sm space-y-1">
-        {trainer.specializations.map((spec, i) => (
-          <li key={i}>• {spec}</li>
-        ))}
-      </ul>
-    </div>
+            <p className="text-white/70 mb-2">
+              <span className="text-white font-medium">Specialization:</span>{" "}
+              {trainer.specialization}
+            </p>
 
-    <div className="w-full text-center mb-4">
-      <h3 className="font-semibold text-lg mb-2">Availability</h3>
-      <p className="text-sm">{trainer.availability.days.join(", ")}</p>
-      <p className="text-sm">{trainer.availability.timeSlots.join(" | ")}</p>
-    </div>
+            <p className="text-white/70 mb-6">
+              <span className="text-white font-medium">Experience:</span>{" "}
+              {trainer.experience}
+            </p>
 
-    <button
-      onClick={() => setView("form")}
-      className="mt-3 bg-[#00ADB5] text-white px-6 py-2 rounded hover:bg-[#008e94]"
-    >
-      Book Trainer
-    </button>
-  </div>
-)}
- {view === "form" && (
-  <Form trainer={trainer} onBack={() => setView("profile")} />
-)}
-  </div>
-    </div>
+            <p className="text-white/70 text-lg leading-relaxed">
+              {trainer.bio}
+            </p>
+          </div>
+        </div>
+
+        {/* Info Sections */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16">
+
+          {/* Best For */}
+          <div className="border border-white/10 rounded-xl p-6">
+            <h2 className="text-xl font-semibold text-white mb-4">
+              Best For
+            </h2>
+            <ul className="space-y-2 text-white/70">
+              {trainer.bestFor.map((item, index) => (
+                <li key={index}>• {item}</li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Programs Handled */}
+          <div className="border border-white/10 rounded-xl p-6">
+            <h2 className="text-xl font-semibold text-white mb-4">
+              Programs Handled
+            </h2>
+            <ul className="space-y-2 text-white/70">
+              {trainer.programsHandled.map((program, index) => (
+                <li key={index}>• {program}</li>
+              ))}
+            </ul>
+          </div>
+
+        </div>
+
+        {/* Availability */}
+        <div className="border border-white/10 rounded-xl p-6 mb-16">
+          <h2 className="text-xl font-semibold text-white mb-3">
+            Availability
+          </h2>
+          <p className="text-white/70">
+            {trainer.availability}
+          </p>
+        </div>
+
+        {/* CTA */}
+        <div className="flex flex-col sm:flex-row gap-4">
+          <Link
+            to={`/trainers/${trainer.id}/enquiry`}
+            className="bg-red-600 text-white px-8 py-3 rounded
+                       font-semibold hover:bg-red-700 transition text-center"
+          >
+            Talk to Trainer
+          </Link>
+
+          <Link
+            to="/programs"
+            className="border border-white/20 text-white px-8 py-3 rounded
+                       hover:border-red-600 transition text-center"
+          >
+            View Programs
+          </Link>
+        </div>
+
+      </div>
+    </section>
   );
 }
 
-export default Modal;
+export default TrainerDetails;

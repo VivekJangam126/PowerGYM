@@ -1,85 +1,104 @@
-import React, { useState } from 'react';
+import { useState } from "react";
+
 function JobForm() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
 
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [phone, setPhone] = useState('');
-    const [userDetails, setUserDetails] = useState([]);
+  function handleSubmit(e) {
+    e.preventDefault();
+    alert("Application submitted successfully!");
+    setName("");
+    setEmail("");
+    setPhone("");
+  }
 
-    function handleSubmit(e) {
-        e.preventDefault();
-        // Here you can handle the form submission, e.g., send data to a server
-        const User=[...userDetails];
-        User.push({name,email,phone});
-        setUserDetails(User);
-        console.log(User);
-        
-
-        alert('Application Submitted Successfully!');
-        alert(`Details:\nName: ${name}\nEmail: ${email}\nPhone: ${phone}`);
-        // Reset form fields after submission
-        setName('');
-        setEmail('');
-        setPhone('');
-    }
   return (
-    <div className="trainer-application-form flex justify-center items-center min-h-screen bg-white p-4 gap-20 flex-col md:flex-row">
-        <div>
-            <img src="https://tse3.mm.bing.net/th/id/OIP.3yYbXvuLFhVj1jmc1glbjAHaHa?cb=defcache2defcache=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Trainer Application" className="w-150 h-150 "/>
+    <section className="bg-black min-h-screen py-24 px-6 select-none">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+
+        {/* LEFT IMAGE */}
+        <div className="hidden md:flex justify-center">
+          <img
+            src="https://tse3.mm.bing.net/th/id/OIP.3yYbXvuLFhVj1jmc1glbjAHaHa?pid=ImgDetMain"
+            alt="Trainer Application"
+            className="w-full max-w-md rounded-xl
+                       border border-white/10 shadow-xl opacity-90"
+          />
         </div>
-    <div className="p-8 bg-white text-black
-    rounded-lg max-w-md w-full shadow-lg hover:shadow-2xl transition-shadow duration-300">
-       <h2 className="text-2xl font-bold text-center mb-12 text-[#222831]">
-        Apply for a Trainer Position
-      </h2>
 
-      <form onSubmit={(e) => {
-        handleSubmit(e);
-      }}
+        {/* RIGHT FORM */}
+        <div className="border border-white/10 rounded-xl p-8 shadow-xl">
+          <span className="text-red-600 font-semibold tracking-widest block mb-2">
+            CAREERS
+          </span>
 
-       className="space-y-6 text-black h-115">
-        <div>
-        
-        <label className="block text-sm  mb-1 font-medium text-[#222831]">
-        Full Name  
-          </label>
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#00ADB5]"
-            placeholder="Enter your full name"
-          />
-          <label className="block mt-4 mb-1 text-sm font-medium text-[#222831]">
-        Email Address 
-          </label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#00ADB5]"
-            placeholder="Enter your Email Address"
-          />
-         
-          <label className="block mt-4 mb-1 text-sm font-medium text-[#222831]">
-        Phone Number  
-          </label>
-          <input
-            type="tel"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#00ADB5]"
-            placeholder="Enter your Phone Number"
-          />
-          
-          <button  type="submit" className="mt-4 w-full bg-[#00ADB5] text-[#222831] 
-          font-semibold py-2 rounded hover:opacity-60 transition">
-            Apply Now
-          </button>
-        </div>          
-        </form>
-    </div>
-    </div>
+          <h2 className="text-3xl font-bold text-white mb-6">
+            Apply as a Trainer
+          </h2>
+
+          <p className="text-white/70 mb-8">
+            Join Power GYM as a certified trainer and help members achieve real,
+            sustainable fitness results through disciplined training.
+          </p>
+
+          <form onSubmit={handleSubmit} className="space-y-6">
+
+            <div>
+              <label className="block text-sm text-white/80 mb-2">
+                Full Name
+              </label>
+              <input
+                type="text"
+                value={name}
+                onChange={e => setName(e.target.value)}
+                required
+                className="w-full p-3 rounded bg-black border border-white/20
+                           text-white focus:outline-none focus:border-red-600"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm text-white/80 mb-2">
+                Email Address
+              </label>
+              <input
+                type="email"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+                required
+                className="w-full p-3 rounded bg-black border border-white/20
+                           text-white focus:outline-none focus:border-red-600"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm text-white/80 mb-2">
+                Phone Number
+              </label>
+              <input
+                type="tel"
+                value={phone}
+                onChange={e => setPhone(e.target.value)}
+                required
+                className="w-full p-3 rounded bg-black border border-white/20
+                           text-white focus:outline-none focus:border-red-600"
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="w-full bg-red-600 text-white font-semibold py-3 rounded
+                         hover:bg-red-700 transition"
+            >
+              Submit Application
+            </button>
+
+          </form>
+        </div>
+
+      </div>
+    </section>
   );
 }
 

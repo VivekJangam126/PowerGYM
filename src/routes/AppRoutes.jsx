@@ -7,6 +7,8 @@ import Gallery from "../pages/Gallery.jsx";
 import Membership from "../pages/MemberShip.jsx";
 import ProgramDetails from "../components/Program/ProgramDetails.jsx";
 import ProgramEnquiryForm from "../components/Program/EnquiryForm.jsx";
+import TrainerDetails from "../components/Trainer/TrainerDetails.jsx";
+import TrainerEnquiryForm from "../components/Trainer/TrainerEnquiryForm.jsx";
 function AppRoutes() {  
     return(
     <Routes>
@@ -21,6 +23,8 @@ function AppRoutes() {
          <Route path="/membership" element={<Membership/>} />
         <Route path="/programs/:id" element={<ProgramDetails/>} />
         <Route path="programs/:id/enquiry" element={<ProgramEnquiryForm/>} />
+        <Route path="/trainers/:id" element={<TrainerDetails />} />
+<Route path="/trainers/:id/enquiry" element={<TrainerEnquiryForm />} />
     </Routes>
     )
 }

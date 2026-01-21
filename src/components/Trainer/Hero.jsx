@@ -1,15 +1,58 @@
 function Hero() {
-    return (
-        <div className="flex  bg-white  justify-center items-center  h-auto  md:flex-row flex-col   text-black  ">
-        <div className="left-container border-black  border-2 rounded-lg m-4  w-1/2 flex flex-col px-4 py-4 items-center">
-            <p className="text-3xl font-bold ">Meet Our Trainers </p>   
-            <p className="mt-4 text-lg flex flex-col px-4 py-4 ">Our certified trainers are dedicated to helping you achieve your fitness goals. With personalized workout plans, expert guidance, and unwavering support, they ensure you stay motivated and on track. Whether you're a beginner or an experienced athlete, our trainers tailor their approach to suit your needs, making every session effective and enjoyable. Join us and experience the difference a great trainer can make in your fitness journey!</p>  
+  return (
+    <section className="bg-black text-white py-24 px-6 select-none">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
 
+        {/* LEFT CONTENT */}
+        <div className="space-y-6">
+          <span className="text-red-600 font-semibold tracking-widest">
+            OUR COACHES
+          </span>
+
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+            Meet Our <span className="text-red-600">Expert Trainers</span>
+          </h1>
+
+          <p className="text-white/75 text-lg leading-relaxed">
+            Our certified trainers are committed to your progress. With
+            structured programs, personalized attention, and disciplined
+            coaching, they help you train smarter and achieve real results —
+            whether you’re just starting out or pushing for peak performance.
+          </p>
+
+          <div className="flex flex-wrap gap-4 pt-4">
+            <a
+              href="#trainers"
+              className="bg-red-600 px-6 py-3 rounded font-semibold
+                         hover:bg-red-700 transition"
+            >
+              View Trainers
+            </a>
+
+            <a
+              href="/contact"
+              className="border border-white/30 px-6 py-3 rounded
+                         hover:border-red-600 transition"
+            >
+              Talk to a Trainer
+            </a>
+          </div>
         </div>
-        <div className="right-container items-left px-4 py-4 border-white border-2 rounded-lg m-4 fit-content w-1/2  ">
-            <img src="https://thumbs.dreamstime.com/b/personal-trainer-gym-fitness-coach-training-client-vector-illustration-isolated-white-background-198689659.jpg" alt="Trainer Image" className="w-full h-132 object-cover"/>   
+
+        {/* RIGHT IMAGE */}
+        <div className="relative">
+          <div className="absolute inset-0 bg-red-600/10 rounded-xl blur-2xl" />
+          <img
+            src="https://img.freepik.com/premium-photo/male-african-american-trains-sport-equipment-gym-red-balck-light-gym-background_116317-21466.jpg?w=740"
+            alt="Trainer Coaching"
+            className="relative w-150 h-80 object-cover  max-w-md mx-auto rounded-xl
+                       border border-white/10 shadow-xl"
+          />
         </div>
-</div>
-    )
+
+      </div>
+    </section>
+  );
 }
+
 export default Hero;
