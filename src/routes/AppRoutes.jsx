@@ -9,6 +9,7 @@ import ProgramDetails from "../components/Program/ProgramDetails.jsx";
 import ProgramEnquiryForm from "../components/Program/EnquiryForm.jsx";
 import TrainerDetails from "../components/Trainer/TrainerDetails.jsx";
 import TrainerEnquiryForm from "../components/Trainer/TrainerEnquiryForm.jsx";
+import Payment from "../pages/Payment.jsx";
 import TimeTable from "../pages/TimeTable.jsx";
 function AppRoutes() {  
     return(
@@ -27,6 +28,7 @@ function AppRoutes() {
         <Route path="/trainers/:id" element={<TrainerDetails />} />
 <Route path="/trainers/:id/enquiry" element={<TrainerEnquiryForm />} />
 <Route path="/timetable" element={<TimeTable/>} />
+<Route path="/payment" element={<Payment/>} />
     </Routes>
     )
 }
