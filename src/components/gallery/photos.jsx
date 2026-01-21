@@ -1,87 +1,85 @@
-
 import data from "./photos.json";
 import { useState } from "react";
 
 function GalleryPhotos() {
-  const [filter, setFilter] = useState("1");
-  const [modalImg, setModalImg] = useState(null);
+  const [filter, setFilter] = useState("all");
 
-  // Category mapping for filter logic
   const categories = [
-    { key: "1", label: "All" },
-    { key: "2", label: "Trainers" },
-    { key: "3", label: "Events" },
-    { key: "4", label: "Workouts" },
-    { key: "5", label: "Facilities" },
+    { key: "all", label: "All" },
+    { key: "trainers", label: "Trainers" },
+    { key: "events", label: "Events" },
+    { key: "workouts", label: "Workouts" },
+    { key: "facilities", label: "Facilities" },
   ];
 
-  // Helper for filter logic
-  const getCategory = (key) => {
-    switch (key) {
-      case "2": return "trainers";
-      case "3": return "events";
-      case "4": return "workouts";
-      case "5": return "facilities";
-      default: return null;
-    }
-  };
-
   return (
-    <div className="py-10 px-2 select-none rounded-none shadow-xl w-full bg-linear-to-br from-[#232526] to-[#414345]">
-     
-      <h1 className="text-4xl font-extrabold text-center mb-2 mt-5 text-[#00ADB5] tracking-tight drop-shadow-lg">
-        PowerGYM Gallery
-      </h1>
-      <p className="text-center text-lg text-[#EEEEEE] mb-8 max-w-3xl mx-auto">
-        Explore our vibrant community, state-of-the-art facilities, and unforgettable moments. Click any photo to enlarge!
-      </p>
-      <div className="flex flex-wrap justify-center gap-3 mb-2">
-        {categories.map((cat) => (
-          <button
-            key={cat.key}
-            onClick={() => setFilter(cat.key)}
-            className={`px-5 py-2 rounded-full font-semibold shadow-md transition-all duration-300 border-2 border-[#00ADB5] mx-1 mb-2
-              ${filter === cat.key
-                ? 'bg-[#00ADB5] text-white scale-105'
-                : 'bg-white text-[#00ADB5] hover:bg-[#393E46] hover:text-white'}`}
-          >
-            {cat.label}
-          </button>
-        ))}
-       
-      </div>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 bg-linear-to-br from-[#232526] to-[#414345] p-2 rounded-lg shadow-inner w-full">
-        {data.images.filter(img =>
-          filter === "1" || img.category === getCategory(filter)
-        ).map((img) => (
-          <div key={img.id} className="relative group cursor-pointer rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 hover-scale-120">
-            <img
-              src={img.url}
-              alt={img.alt || "Gallery Image"}
-              className="w-full h-40 sm:h-48 object-cover transition-transform duration-300 group-hover:scale-105 group-hover:brightness-90 border-white border-2 " 
-            />
-             
-              <div className="absolute inset-0 flex items-end justify-center">
-        <div className="w-full bg-black/60 p-4 text-center 
-                        translate-y-full opacity-0
-                        transition-all duration-200 ease-out
-                        group-hover:translate-y-0 group-hover:opacity-100">
-        <h3 className="text-white text-xl font-semibold">
-          {img.title}
-        </h3>
-        <p className="text-gray-200 text-sm mt-1">
-          {img.description}
+    <section className="bg-black py-24 px-6 select-none">
+      <div className="max-w-7xl mx-auto">
+
+        <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-4">
+          Training Moments
+        </h2>
+
+        <p className="text-white/70 text-center max-w-2xl mx-auto mb-12">
+          A look into our daily training environment, equipment, and community.
         </p>
+
+        {/* FILTERS */}
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
+          {categories.map(cat => (
+            <button
+              key={cat.key}
+              onClick={() => setFilter(cat.key)}
+              className={`
+                px-5 py-2 rounded font-semibold border
+                transition
+                ${filter === cat.key
+                  ? "bg-red-600 text-white border-red-600"
+                  : "border-white/20 text-white/70 hover:border-red-600 hover:text-white"}
+              `}
+            >
+              {cat.label}
+            </button>
+          ))}
         </div>
-        
+
+        {/* GRID */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+          {data.images
+            .filter(img => filter === "all" || img.category === filter)
+            .map(img => (
+              <div
+                key={img.id}
+                className="group relative overflow-hidden rounded-lg border border-white/10"
+              >
+                <img
+                  src={img.url}
+                  alt={img.title}
+                  className="w-full h-44 sm:h-52 object-cover
+                             transition-transform duration-700
+                             group-hover:scale-110"
+                />
+
+                <div
+                  className="absolute inset-0 flex items-end
+                             bg-black/60 opacity-0
+                             group-hover:opacity-100 transition"
+                >
+                  <div className="p-4">
+                    <h3 className="text-white font-semibold">
+                      {img.title}
+                    </h3>
+                    <p className="text-white/70 text-sm">
+                      {img.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+        </div>
+
       </div>
-      
-          </div>
-        ))}
-        
-      </div>
-      
-    </div>
+    </section>
   );
 }
 
